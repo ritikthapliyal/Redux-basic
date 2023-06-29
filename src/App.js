@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addSong } from "./store/store";
+
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  const songs = useSelector((state)=>{return state.songs})
+
+  console.log(songs)
+
+  const [inputValue,setInputValue] = useState('')
+
+  const handleClick = ()=>{
+        dispatch(addSong(inputValue))
+        setInputValue('')
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <input type="text" value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}></input>
+        <button onClick={handleClick}>Click Me</button>
     </div>
   );
 }
 
-export default App;
+export default App
