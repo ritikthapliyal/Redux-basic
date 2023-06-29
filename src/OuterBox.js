@@ -14,9 +14,9 @@ function OuterBox({boxname}) {
     const handleClick = ()=>{
 
         if(boxname === 'Movie'){
-            dispatch(addSong(inputValue))
-        }else{
             dispatch(addMovie(inputValue))
+        }else{
+            dispatch(addSong(inputValue))
         }
         
         setInputValue('')
@@ -30,16 +30,17 @@ function OuterBox({boxname}) {
             </div>
 
             <div className='showDiv'>
+
                 {
-                    boxname !== 'Movie'
-                    ? 
-                        movies.map((movie,index)=>{
-                            return <div key={index}>
-                                {movie}
-                            </div>
-                        })
-                    :
-                        songs.map((song,index)=>{
+                    boxname === 'Movie' && movies.map((movie,index)=>{
+                        return <div key={index}>
+                            {movie}
+                        </div>
+                    })
+                }
+
+                {
+                    boxname === 'Song' && songs.map((song,index)=>{
                             return <div key={index}>
                                 {song}
                             </div>
