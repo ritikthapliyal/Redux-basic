@@ -1,0 +1,68 @@
+/* ===============APP============== */
+
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0px;
+}
+
+#root{
+
+    padding-top: 4rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.App{
+    display: flex;
+    gap: 20%;
+}
+
+.OuterBox{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 26rem;
+
+    border: 1px solid black;
+    padding: 1rem;
+    border-radius: 4px;
+    height: fit-content;
+}
+
+.OuterBox p{
+    text-align: center;
+    font-size: x-large;
+}
+
+.OuterBox button{
+    width: fit-content;
+    padding: .6rem;
+    border-radius: 4px;
+    cursor: pointer;   
+    background-color: white; 
+    border: 1px solid black;
+}
+
+
+.OuterBox input{
+    width: fit-content;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.InnerDiv{
+    display: flex;
+    gap: 1rem;
+    padding: .4rem;
+}
+
+
+
